@@ -1,4 +1,3 @@
-import pandas as pd
 import re
 
 
@@ -16,11 +15,12 @@ def render(table, params):
         return 'Invalid regex: ' + str(err)
 
     if not compiled.groups:
-        return 'Your regex needs a capture group. Add (parentheses) around it.'
+        return 'Your regex needs a capturing group. Add (parentheses).'
     elif compiled.groups > 1:
         return (
-            'Workbench only supports one (capture group). '
-            'Remove some parentheses.'
+            'Workbench only supports one (capturing group). '
+            'Remove some parentheses, or add "?:" to the beginning '
+            'of parentheses for a "(?:non-capturing group)"'
         )
 
     series = table[col]

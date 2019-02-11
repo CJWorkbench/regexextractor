@@ -114,7 +114,7 @@ class TestRegexExtractor(unittest.TestCase):
         })
         self.assertEqual(
             out,
-            'Your regex needs a capture group. Add (parentheses) around it.'
+            'Your regex needs a capturing group. Add (parentheses).'
         )
 
     def test_invalid_regex_too_many_groups(self):
@@ -125,8 +125,9 @@ class TestRegexExtractor(unittest.TestCase):
         })
         self.assertEqual(
             out,
-            'Workbench only supports one (capture group). Remove '
-            'some parentheses.'
+            'Workbench only supports one (capturing group). Remove '
+            'some parentheses, or add "?:" to the beginning '
+            'of parentheses for a "(?:non-capturing group)"'
         )
 
 
