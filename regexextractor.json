@@ -2,26 +2,26 @@
   "name": "Regex extractor",
   "id_name": "regexextractor",
   "description": "Extract values in a specific column using regular expression, and store them in a new column.",
-  "category" : "Clean",
-  "help_url":"modules/clean/regex-extractor",
+  "category": "Clean",
+  "help_url": "modules/clean/regex-extractor",
   "icon": "sigma",
   "parameters": [
     {
       "name": "Target column",
-      "id_name" : "column",
+      "id_name": "column",
       "type": "column"
     },
     {
       "name": "",
-      "id_name" : "expression",
+      "id_name": "expression",
       "type": "string",
       "placeholder": "Type regular expression formula"
     },
     {
       "name": "Output column",
-      "id_name" : "newcolumn",
+      "id_name": "newcolumn",
       "type": "string",
-      "default":"expression output"
+      "default": "expression output"
     }
   ]
 }
