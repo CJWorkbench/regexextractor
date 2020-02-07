@@ -3,6 +3,7 @@ import pandas as pd
 from pandas.testing import assert_frame_equal
 import numpy as np
 from regexextractor import render
+from cjwmodule.testing.i18n import i18n_message
 
 
 class TestRegexExtractor(unittest.TestCase):
@@ -103,7 +104,10 @@ class TestRegexExtractor(unittest.TestCase):
         })
         self.assertEqual(
             out,
-            'Invalid regex: unterminated character set at position 1'
+            i18n_message(
+                "badParam.regex.invalid", 
+                {"error": 'unterminated character set at position 1'}
+            )
         )
 
     def test_invalid_regex_missing_group_captures_all(self):
@@ -114,7 +118,7 @@ class TestRegexExtractor(unittest.TestCase):
         })
         self.assertEqual(
             out,
-            'Your regex needs a capturing group. Add (parentheses).'
+            i18n_message("badParam.regex.noCapturingGroup")
         )
 
     def test_invalid_regex_too_many_groups(self):
@@ -125,9 +129,7 @@ class TestRegexExtractor(unittest.TestCase):
         })
         self.assertEqual(
             out,
-            'Workbench only supports one (capturing group). Remove '
-            'some parentheses, or add "?:" to the beginning '
-            'of parentheses for a "(?:non-capturing group)"'
+            i18n_message("badParam.regex.tooManyCapturingGroups")
         )
 
 

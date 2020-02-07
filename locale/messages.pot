@@ -1,0 +1,39 @@
+#. default-message: Regex extractor
+msgid "_spec.name"
+msgstr ""
+
+#. default-message: Extract values from a specific column using regular expression, and store them in a new column.
+msgid "_spec.description"
+msgstr ""
+
+#. default-message: Target column
+msgid "_spec.parameters.column.name"
+msgstr ""
+
+#. default-message: Type regular expression formula
+msgid "_spec.parameters.expression.placeholder"
+msgstr ""
+
+#. default-message: Output column
+msgid "_spec.parameters.newcolumn.name"
+msgstr ""
+
+#. default-message: expression output
+msgid "_spec.parameters.newcolumn.default"
+msgstr ""
+
+#. default-message: Invalid regex: {error}
+#: regexextractor.py:19
+msgid "badParam.regex.invalid"
+msgstr ""
+
+#. default-message: Your regex needs a capturing group. Add (parentheses).
+#: regexextractor.py:23
+msgid "badParam.regex.noCapturingGroup"
+msgstr ""
+
+#. default-message: Workbench only supports one (capturing group). Remove some parentheses, or add "?:" to the beginning of parentheses for a "(?:non-capturing group)"
+#: regexextractor.py:28
+msgid "badParam.regex.tooManyCapturingGroups"
+msgstr ""
+

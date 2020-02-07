@@ -1,4 +1,5 @@
 import re
+from cjwmodule import i18n
 
 
 def render(table, params):
@@ -12,12 +13,20 @@ def render(table, params):
     try:
         compiled = re.compile(regex)
     except re.error as err:
-        return 'Invalid regex: ' + str(err)
+        return i18n.trans(
+            "badParam.regex.invalid", 
+            'Invalid regex: {error}',
+            {"error": str(err)}
+        )
 
     if not compiled.groups:
-        return 'Your regex needs a capturing group. Add (parentheses).'
+        return i18n.trans(
+            "badParam.regex.noCapturingGroup", 
+            'Your regex needs a capturing group. Add (parentheses).'
+        )
     elif compiled.groups > 1:
-        return (
+        return i18n.trans(
+            "badParam.regex.tooManyCapturingGroups", 
             'Workbench only supports one (capturing group). '
             'Remove some parentheses, or add "?:" to the beginning '
             'of parentheses for a "(?:non-capturing group)"'
