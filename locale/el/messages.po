@@ -41,13 +41,17 @@ msgstr "έξοδος έκφρασης"
 
 #: regexextractor.py:19
 msgid "badParam.regex.invalid"
-msgstr ""
+msgstr "Άκυρη κανονική έκφραση: {error}"
 
 #: regexextractor.py:23
 msgid "badParam.regex.noCapturingGroup"
 msgstr ""
+"Η κανονική έκφραση χρειάζεται ομάδα καταγραφής. Προσθέστε (παρενθέσεις)."
 
 #: regexextractor.py:28
 msgid "badParam.regex.tooManyCapturingGroups"
 msgstr ""
+"Το Workbench υποστηρίζει μόνο μία (ομάδα καταγραφής). Αφαιρέστε ορισμένες "
+"παρενθέσεις ή προσθέστε \"?:\" στην αρχή μετά το σύμβολο για μια \"(?:ομάδα "
+"μη καταγραφής)\""
 
